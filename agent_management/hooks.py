@@ -49,7 +49,8 @@ after_install = [
     "agent_management.customization.supplier_customization.create_custom_fields",
     "agent_management.customization.sales_order_custom.create_custom_fields",
     "agent_management.customization.sales_invoice_custom_fields.create_custom_fields",
-    "agent_management.customization.payment_entry_custom.create_custom_fields"
+    "agent_management.customization.payment_entry_custom.create_custom_fields",
+    "agent_management.customization.sales_partner_customization.disable_partner_name_mandatory"
 ]
 
 after_migrate = [
