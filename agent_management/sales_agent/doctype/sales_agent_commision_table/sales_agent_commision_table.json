@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-17 18:18:05.574185",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_my0f",
+  "sales_invoice",
+  "commission_rate",
+  "eligible_amount_for_commission",
+  "commission_value",
+  "commission_paid",
+  "balance_commission_amount",
+  "payment_entry_receipt",
+  "mode_of_payment",
+  "payment_date",
+  "reference_number",
+  "payment_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_my0f",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sales Invoice",
+   "link_filters": "[[\"Sales Invoice\",\"docstatus\",\"=\",\"1\"]]",
+   "options": "Sales Invoice"
+  },
+  {
+   "fetch_from": "sales_invoice.supplier_sales_partner_commission_rate",
+   "fieldname": "commission_rate",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Commision Rate %"
+  },
+  {
+   "fetch_from": "sales_invoice.amount_eligible_for_commission",
+   "fieldname": "eligible_amount_for_commission",
+   "fieldtype": "Currency",
+   "label": "Eligible Amount For Commission"
+  },
+  {
+   "fetch_from": "sales_invoice.supplier_sales_partner_commission",
+   "fieldname": "commission_value",
+   "fieldtype": "Currency",
+   "label": "Commission Value"
+  },
+  {
+   "fieldname": "commission_paid",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Commission Paid"
+  },
+  {
+   "fieldname": "balance_commission_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Balance Commission Amount"
+  },
+  {
+   "fieldname": "payment_entry_receipt",
+   "fieldtype": "Link",
+   "label": "Payment Entry Receipt",
+   "link_filters": "[[\"Payment Entry\",\"docstatus\",\"=\",\"1\"]]",
+   "options": "Payment Entry"
+  },
+  {
+   "fetch_from": "payment_entry_receipt.mode_of_payment",
+   "fieldname": "mode_of_payment",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Mode Of Payment"
+  },
+  {
+   "fetch_from": "payment_entry_receipt.posting_date",
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date"
+  },
+  {
+   "fetch_from": "payment_entry_receipt.reference_no",
+   "fieldname": "reference_number",
+   "fieldtype": "Data",
+   "label": "Reference Number"
+  },
+  {
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Payment Status",
+   "options": "Unpaid\nPaid\nPartially-Paid\nCancelled"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-19 19:15:12.232180",
+ "modified_by": "Administrator",
+ "module": "Sales Agent",
+ "name": "Sales Agent Commision Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

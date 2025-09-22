@@ -10,6 +10,67 @@ app_license = "mit"
 
 # required_apps = []
 
+doc_events = {
+    "Sales Partner": {
+            "before_insert": [
+        "agent_management.customization.sales_partner_customization.set_sales_partner_name"
+    ]
+    },
+    "Sales Order": {
+        "before_save": "agent_management.customization.sales_order_comm.set_supplier_sales_partner"
+        },
+    "Sales Invoice":{
+        "before_save":"agent_management.customization.sales_invoice_custom.set_supplier_sales_partner_si",
+        "on_submit": ["agent_management.sales_agent.doctype.sales_agent_commission.sales_agent_commission.handle_sales_invoice_on_submit",
+                      "agent_management.sales_agent.doctype.sales_agent_commission.sales_agent_commission.sales_invoice_on_submit"], 
+        "on_cancel":"agent_management.sales_agent.doctype.sales_agent_commission.sales_agent_commission.handle_sales_invoice_on_cancel"
+       
+    },
+    "Payment Entry":{
+        "on_submit":["agent_management.sales_agent.doctype.sales_agent_commission.sales_agent_commission.handle_payment_entry_on_submit",
+                     "agent_management.sales_agent.doctype.sales_agent_commission.sales_agent_commission.update_sales_agent_commission_from_payment"]
+    }
+  
+}
+
+override_whitelisted_methods = {
+    "erpnext.accounts.doctype.payment_entry.payment_entry.get_party_account":
+        "agent_management.agent_management.customization.payment_entry_customisation.get_party_account"
+}
+
+
+doctype_js = {
+    "Sales Order": "public/js/sales_order_custom.js",
+    "Sales Invoice":"public/js/sales_invoice_custom.js"
+}
+
+after_install = [
+    "agent_management.customization.sales_partner_customization.create_custom_fields",
+    "agent_management.customization.supplier_customization.create_custom_fields",
+    "agent_management.customization.sales_order_custom.create_custom_fields",
+    "agent_management.customization.sales_invoice_custom_fields.create_custom_fields",
+    "agent_management.customization.payment_entry_custom.create_custom_fields"
+]
+
+after_migrate = [
+    "agent_management.customization.sales_partner_customization.create_custom_fields",
+    "agent_management.customization.supplier_customization.create_custom_fields",
+    "agent_management.customization.sales_order_custom.create_custom_fields",
+    "agent_management.customization.sales_invoice_custom_fields.create_custom_fields",
+    "agent_management.customization.payment_entry_custom.create_custom_fields",
+    "agent_management.customization.sales_partner_customization.disable_partner_name_mandatory"
+]
+
+before_uninstall = [
+    "agent_management.customization.sales_partner_customization.delete_custom_fields",
+    "agent_management.customization.sales_partner_customization.enable_partner_name_mandatory",
+    "agent_management.customization.supplier_customization.delete_custom_fields",
+    "agent_management.customization.sales_order_custom.delete_custom_fields",
+    "agent_management.customization.sales_invoice_custom_fields.delete_custom_fields",
+    "agent_management.customization.payment_entry_custom.delete_custom_fields"
+]
+
+# patches = ["agent_management.patches.sales_partner_name.execute"]
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
 # 	{

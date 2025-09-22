@@ -1,0 +1,173 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-09-17 18:59:05.727466",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "sales_partner_agent",
+  "sales_commission",
+  "supplier_commission",
+  "supplier_partner_commission_tab",
+  "sales_partner_commission",
+  "commissions_section",
+  "total_bill_value_from_supplier",
+  "paid_supplier_referral_commission",
+  "column_break_aeva",
+  "total_commissions_earned_earned_from_supplier",
+  "referral_commission_balance",
+  "sales_agent_commission_tab",
+  "sales_agent_commission",
+  "commission_section",
+  "total_sales_generated",
+  "commission_paid",
+  "column_break_ddwb",
+  "total_commission_earned",
+  "commission_balance"
+ ],
+ "fields": [
+  {
+   "fieldname": "sales_partner_agent",
+   "fieldtype": "Link",
+   "label": "Sales Partner Agent",
+   "options": "Sales Partner",
+   "unique": 1
+  },
+  {
+   "fieldname": "supplier_partner_commission_tab",
+   "fieldtype": "Tab Break",
+   "label": "Supplier Partner Commission"
+  },
+  {
+   "fieldname": "sales_partner_commission",
+   "fieldtype": "Table",
+   "label": "Supplier Partner Commission",
+   "options": "Sales Agent Commision Table"
+  },
+  {
+   "fieldname": "sales_agent_commission_tab",
+   "fieldtype": "Tab Break",
+   "label": "Sales Agent Commission"
+  },
+  {
+   "fieldname": "sales_agent_commission",
+   "fieldtype": "Table",
+   "label": "Sales Agent Commission",
+   "options": "Sales Partner Commission Table"
+  },
+  {
+   "fetch_from": "sales_partner_agent.commission_rate",
+   "fieldname": "sales_commission",
+   "fieldtype": "Float",
+   "label": "Sales Commission(%)",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "sales_partner_agent.supplier_partner__commission",
+   "fieldname": "supplier_commission",
+   "fieldtype": "Float",
+   "label": "Supplier Commission(%)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_bill_value_from_supplier",
+   "fieldtype": "Currency",
+   "label": "Total Bill Value From Supplier",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_commissions_earned_earned_from_supplier",
+   "fieldtype": "Currency",
+   "label": "Supplier Referral Commission",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_sales_generated",
+   "fieldtype": "Currency",
+   "label": "Total Sales Generated",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_commission_earned",
+   "fieldtype": "Currency",
+   "label": "Total Commission Earned",
+   "read_only": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "SALES-AGENT-.sales_partner_agent.-"
+  },
+  {
+   "fieldname": "commission_paid",
+   "fieldtype": "Currency",
+   "label": "Commission Paid",
+   "read_only": 1
+  },
+  {
+   "fieldname": "commission_balance",
+   "fieldtype": "Currency",
+   "label": "Commission Balance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "commission_section",
+   "fieldtype": "Section Break",
+   "label": "Sales Commission"
+  },
+  {
+   "fieldname": "column_break_ddwb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "commissions_section",
+   "fieldtype": "Section Break",
+   "label": "Refferal Commission"
+  },
+  {
+   "fieldname": "column_break_aeva",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "referral_commission_balance",
+   "fieldtype": "Currency",
+   "label": "Referral Commission Balance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "paid_supplier_referral_commission",
+   "fieldtype": "Currency",
+   "label": "Paid Supplier Referral Commission",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-19 19:07:01.841622",
+ "modified_by": "Administrator",
+ "module": "Sales Agent",
+ "name": "Sales Agent Commission",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
