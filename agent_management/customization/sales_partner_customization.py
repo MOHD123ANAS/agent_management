@@ -49,6 +49,13 @@ def create_custom_fields():
                 "fieldtype":"Data",
                 "read_only":1,
                 "insert_after":"selection"
+            },
+                       {
+                "fieldname":"customer",
+                "label":"Customer Id",
+                "fieldtype":"Link",
+                "options":"Customer",
+                "insert_after":"supplier_partner__commission"
             }
         ]
     }
@@ -64,7 +71,7 @@ def create_custom_fields():
 
 def delete_custom_fields():
     custom_fields_to_delete = {
-        "Sales Partner": ["supplier_partner__commission","full_name","sales_partner_onboarding","selection","counter"]
+        "Sales Partner": ["supplier_partner__commission","full_name","sales_partner_onboarding","selection","counter","customer"]
     }
 
     for doctype, fields in custom_fields_to_delete.items():

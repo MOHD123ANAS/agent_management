@@ -46,27 +46,68 @@ class SalesPartnerOnboarding(Document):
         if self.status == 'Pending':
             frappe.throw('Cannot Submit Sales Partner Onboarding Form In Pending Status')
 
+# Inside Sales Partner Onboarding DocType
     @frappe.whitelist()
     def create_sales_partner(self):
         if self.status != "Accepted":
             frappe.throw("Sales Partner can only be created when status is 'Accepted'.")
 
-        
+        # Check if already exists
         existing = frappe.get_all("Sales Partner", filters={"sales_partner_onboarding": self.name})
         if existing:
             frappe.msgprint("Sales Partner already exists for this onboarding.")
-            return
+            return existing[0].name
 
-        
+        # 1️⃣ Create Sales Partner
         sp = frappe.get_doc({
             "doctype": "Sales Partner",
             "full_name": self.full_name,
             "territory": "All Territories",
             "commission_rate": 1,
-            "sales_partner_onboarding": self.name
+            "sales_partner_onboarding": self.name,
+            "customer":self.customer_id
         })
         sp.insert()
-        frappe.msgprint(f"Sales Partner '{sp.partner_name}' created successfully!")
+
+        # 2️⃣ Create Contact
+        contact = frappe.get_doc({
+            "doctype": "Contact",
+            "first_name": self.full_name,
+            "links": [{"link_doctype": "Sales Partner", "link_name": sp.name}]
+        })
+        if self.email_id:
+            contact.append("email_ids", {
+                "email_id": self.email_id,
+                "is_primary": 1
+        })
+        if self.contact_number:
+            contact.append("phone_nos", {
+                "phone": self.contact_number,
+                "is_primary_phone": 1
+            })
+        contact.insert()
+
+        # 3️⃣ Create Address
+        address = frappe.get_doc({
+            "doctype": "Address",
+            "address_title": self.full_name,
+            "address_line1": self.address_line_1,
+            "address_line2": self.address_line_2,
+            "city": self.city,
+            "state": self.state,
+            "pincode": self.pincode,
+            "country": self.country,
+            "links": [{"link_doctype": "Sales Partner", "link_name": sp.name}]
+        })
+        address.insert()
+
+        # Link Sales Partner in onboarding doc
+        # self.db_set("sales_partner", sp.name)
+
+        frappe.msgprint(f"Sales Partner '{sp.partner_name}' created successfully with Contact and Address!")
+        return sp.name
+
+
 @frappe.whitelist()
 def create_sales_partner(docname):
     

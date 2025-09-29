@@ -21,6 +21,7 @@
   "contact_number",
   "advance_payment",
   "enter_you_amount",
+  "customer_id",
   "address_details_section",
   "address_line_1",
   "address_line_2",
@@ -63,14 +64,16 @@
    "fieldtype": "Data",
    "label": "Email Id",
    "options": "email",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "pan_number",
    "fieldtype": "Data",
    "label": "PAN Number",
    "options": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "full_name",
@@ -89,7 +92,8 @@
    "fieldname": "gst_number",
    "fieldtype": "Data",
    "label": "GST Number",
-   "mandatory_depends_on": "eval:doc.is_gst_registered"
+   "mandatory_depends_on": "eval:doc.is_gst_registered",
+   "unique": 1
   },
   {
    "fieldname": "contact_number",
@@ -170,6 +174,12 @@
    "fieldtype": "Select",
    "label": "Naming Series",
    "options": "SAPOB-."
+  },
+  {
+   "fieldname": "customer_id",
+   "fieldtype": "Link",
+   "label": "Customer ID",
+   "options": "Customer"
   }
  ],
  "grid_page_length": 50,
@@ -181,7 +191,7 @@
    "link_fieldname": "sales_partner_onboarding"
   }
  ],
- "modified": "2025-09-20 02:57:00.751143",
+ "modified": "2025-09-24 11:25:42.921097",
  "modified_by": "Administrator",
  "module": "Sales Agent",
  "name": "Sales Partner Onboarding",

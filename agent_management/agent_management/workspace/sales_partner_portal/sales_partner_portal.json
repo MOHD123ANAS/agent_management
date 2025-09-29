@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"cOxMGxY7YX\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sales Partner Portal</span>\",\"col\":12}},{\"id\":\"5dDqNf0SpN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Partner Onboarding\",\"col\":3}},{\"id\":\"G6R1r9P4L4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Partner\",\"col\":3}},{\"id\":\"T79rq44YIe\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Agent Commission\",\"col\":3}},{\"id\":\"SYqcvu8kBL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Sales Agent Commision Report\",\"col\":3}}]",
+ "content": "[{\"id\":\"cOxMGxY7YX\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sales Partner Portal</span>\",\"col\":12}},{\"id\":\"5dDqNf0SpN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Partner Onboarding\",\"col\":3}},{\"id\":\"G6R1r9P4L4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Partner\",\"col\":3}},{\"id\":\"T79rq44YIe\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Partner Commission\",\"col\":3}},{\"id\":\"SYqcvu8kBL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Sales Agent Commision Report\",\"col\":3}}]",
  "creation": "2025-09-17 18:16:01.276381",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Sales Partner Portal",
  "links": [],
- "modified": "2025-09-22 10:03:02.978694",
+ "modified": "2025-09-24 21:57:04.049492",
  "modified_by": "Administrator",
  "module": "Agent Management",
  "name": "Sales Partner Portal",
@@ -26,18 +26,18 @@
  "sequence_id": 30.0,
  "shortcuts": [
   {
-   "color": "Grey",
+   "color": "Green",
    "doc_view": "List",
-   "label": "Sales Partner Onboarding",
-   "link_to": "Sales Partner Onboarding",
+   "label": "Sales Partner Commission",
+   "link_to": "Sales Agent Commission",
    "stats_filter": "[]",
    "type": "DocType"
   },
   {
-   "color": "Green",
+   "color": "Grey",
    "doc_view": "List",
-   "label": "Sales Agent Commission",
-   "link_to": "Sales Agent Commission",
+   "label": "Sales Partner Onboarding",
+   "link_to": "Sales Partner Onboarding",
    "stats_filter": "[]",
    "type": "DocType"
   },

@@ -9,6 +9,8 @@ app_license = "mit"
 # ------------------
 
 # required_apps = []
+# app_include_js = "agent_management/automation/custome_create_button.js"
+
 
 doc_events = {
     "Sales Partner": {
@@ -41,7 +43,8 @@ override_whitelisted_methods = {
 
 doctype_js = {
     "Sales Order": "public/js/sales_order_custom.js",
-    "Sales Invoice":"public/js/sales_invoice_custom.js"
+    "Sales Invoice":"public/js/sales_invoice_custom.js",
+    "Sales Partner": "automation/custome_create_button.js"
 }
 
 after_install = [
@@ -50,7 +53,8 @@ after_install = [
     "agent_management.customization.sales_order_custom.create_custom_fields",
     "agent_management.customization.sales_invoice_custom_fields.create_custom_fields",
     "agent_management.customization.payment_entry_custom.create_custom_fields",
-    "agent_management.customization.sales_partner_customization.disable_partner_name_mandatory"
+    "agent_management.customization.sales_partner_customization.disable_partner_name_mandatory",
+    "agent_management.customization.customer_customization.create_custom_fields"
 ]
 
 after_migrate = [
@@ -59,7 +63,8 @@ after_migrate = [
     "agent_management.customization.sales_order_custom.create_custom_fields",
     "agent_management.customization.sales_invoice_custom_fields.create_custom_fields",
     "agent_management.customization.payment_entry_custom.create_custom_fields",
-    "agent_management.customization.sales_partner_customization.disable_partner_name_mandatory"
+    "agent_management.customization.sales_partner_customization.disable_partner_name_mandatory",
+    "agent_management.customization.customer_customization.create_custom_fields"
 ]
 
 before_uninstall = [
@@ -68,7 +73,8 @@ before_uninstall = [
     "agent_management.customization.supplier_customization.delete_custom_fields",
     "agent_management.customization.sales_order_custom.delete_custom_fields",
     "agent_management.customization.sales_invoice_custom_fields.delete_custom_fields",
-    "agent_management.customization.payment_entry_custom.delete_custom_fields"
+    "agent_management.customization.payment_entry_custom.delete_custom_fields",
+    "agent_management.customization.customer_customization.delete_custom_fields"
 ]
 
 # patches = ["agent_management.patches.sales_partner_name.execute"]
