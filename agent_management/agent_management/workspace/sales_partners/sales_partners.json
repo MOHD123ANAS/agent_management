@@ -1,0 +1,61 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"cOxMGxY7YX\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sales Partners - Dashboard</span>\",\"col\":12}},{\"id\":\"dSCXsUjg-q\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"5dDqNf0SpN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Partner Onboarding\",\"col\":3}},{\"id\":\"G6R1r9P4L4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Partner\",\"col\":3}},{\"id\":\"T79rq44YIe\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Partner Commission\",\"col\":3}},{\"id\":\"SYqcvu8kBL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Commission Report\",\"col\":3}}]",
+ "creation": "2025-09-17 18:16:01.276381",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "users",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Sales Partners",
+ "links": [],
+ "modified": "2025-09-29 23:17:42.806473",
+ "modified_by": "Administrator",
+ "module": "Agent Management",
+ "name": "Sales Partners",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 30.0,
+ "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Sales Partner Commission",
+   "link_to": "Sales Agent Commission",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Sales Partner Onboarding",
+   "link_to": "Sales Partner Onboarding",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Supplier Commission Report",
+   "link_to": "Supplier Sales Agent",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Sales Partner",
+   "link_to": "Sales Partner",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Sales Partners"
+}
