@@ -39,6 +39,16 @@ def create_custom_fields():
                 "reqd": 0,
                 "read_only": 1
             },
+            {
+                "fieldname": "delivered",
+                "fieldtype": "Check",
+                "label": "Delivered?",
+                "insert_after": "is_debit_note",
+                "in_list_view": 1,
+                "reqd": 0,
+                "read_only": 1
+            },
+
         ]
     }
 
@@ -52,7 +62,7 @@ def create_custom_fields():
     
 def delete_custom_fields():
     custom_fields_to_delete = {
-        "Sales Invoice": ["supplier", "supplier_sales_partner_commission", "supplier_sales_partner","supplier_sales_partner_commission_rate"]
+        "Sales Invoice": ["supplier", "supplier_sales_partner_commission", "supplier_sales_partner","supplier_sales_partner_commission_rate","delivered"]
     }
 
     for doctype, fields in custom_fields_to_delete.items():

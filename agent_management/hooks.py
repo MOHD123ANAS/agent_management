@@ -25,7 +25,8 @@ doc_events = {
         "before_save":"agent_management.customization.sales_invoice_custom.set_supplier_sales_partner_si",
         "on_submit": ["agent_management.sales_agent.doctype.sales_agent_commission.sales_agent_commission.handle_sales_invoice_on_submit",
                       "agent_management.sales_agent.doctype.sales_agent_commission.sales_agent_commission.sales_invoice_on_submit"], 
-        "on_cancel":"agent_management.sales_agent.doctype.sales_agent_commission.sales_agent_commission.handle_sales_invoice_on_cancel"
+        "on_cancel":"agent_management.sales_agent.doctype.sales_agent_commission.sales_agent_commission.handle_sales_invoice_on_cancel",
+        "on_update_after_submit":"agent_management.customization.sales_invoice_custom.sales_invoice_after_submit"
        
     },
     "Payment Entry":{
